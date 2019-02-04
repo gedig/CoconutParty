@@ -42,13 +42,18 @@ The following packages were added:
   com.unity.modules.wind@1.0.0
   com.unity.modules.xr@1.0.0
 
+<<<<<<< HEAD
 === Sat Dec  1 19:36:21 2018
+=======
+=== Fri Feb  1 21:31:45 2019
+>>>>>>> 80d8952fc598dec435bd98bcce1d85ce13b4d5d0
 
 Packages were changed.
 Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.analytics from version 3.2.0 to 3.2.2
+<<<<<<< HEAD
 
 === Sat Dec 29 13:50:14 2018
 
@@ -57,5 +62,7 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.ads from version 2.0.8 to 2.3.1
+=======
+>>>>>>> 80d8952fc598dec435bd98bcce1d85ce13b4d5d0
   com.unity.collab-proxy from version 1.2.11 to 1.2.15
   com.unity.purchasing from version 2.0.1 to 2.0.3
