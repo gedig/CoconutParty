@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/HelloWorld.cs.meta
 guid: b2f1ccf529460604cad2a249b0d3b117
+=======
+guid: b1e91636111ab554c81bf0f5b8c4db9e
+>>>>>>> 80d8952fc598dec435bd98bcce1d85ce13b4d5d0:Assets/Scripts/HelloWorld.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
