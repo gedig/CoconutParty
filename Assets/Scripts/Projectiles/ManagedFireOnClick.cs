@@ -8,7 +8,6 @@ public class ManagedFireOnClick : MonoBehaviour
     public int MaxProjectiles = 80;
     public GameObject Projectile;
     public float ProjectileForce = 250.0f;
-
     private GameObject[] _projectilePool;
     private int _poolIndex = 0;
 
