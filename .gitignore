@@ -25,6 +25,8 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# Gross vim cache files.
+*~
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
