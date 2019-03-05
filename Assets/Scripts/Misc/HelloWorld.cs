@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class HelloWorld : MonoBehaviour
 {
-    // can be used to demo how to add a script as a component (in this case, to a Text gameobject), or to demo the UI 
+    // can be used to demo how to add a script as a component (in this case, to a Text gameobject), or to demo the UI
+
     // Start is called before the first frame update
     void Start()
     {
