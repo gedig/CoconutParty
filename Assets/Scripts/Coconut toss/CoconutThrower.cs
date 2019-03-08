@@ -20,7 +20,7 @@ public class CoconutThrower : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) & _onmat & CoconutCount<MaxCoconuts & FindCoconuts.foundCoconuts)
+        if (Input.GetMouseButtonDown(0) && _onmat && CoconutCount < MaxCoconuts && FindCoconuts.foundCoconuts)
         {
           //  Vector3 projSpawnOffset = (transform.right * 0.3f ) + (transform.up * 0.1f) + (transform.forward * -0.1f);
             GameObject proj = Instantiate<GameObject>(coconutPrefab, transform.position, Quaternion.identity);

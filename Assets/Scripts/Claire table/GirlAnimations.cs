@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class GirlAnimations : MonoBehaviour
 {
+    [SerializeField] private Text _clairsSpeech;
+    [SerializeField] private Image _clairsBG;
+
     private Animator anim;
     public static bool IsInFront;
-    private Text clairsSpeech;
-    private GameObject clairsBG;
     private bool HasVisited;
     private bool animDone;
 
@@ -17,8 +18,13 @@ public class GirlAnimations : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         IsInFront = false;
-        clairsSpeech = GameObject.Find("ClaireSpeech").GetComponent<Text>(); //can assign a gameobject component to a variable
-        clairsBG = GameObject.Find("Background"); //can assign a gameobject to a variable
+        if (_clairsSpeech == null) {
+            _clairsSpeech = GameObject.Find("ClaireSpeech").GetComponent<Text>(); //can assign a gameobject component to a variable
+        }
+        if (_clairsBG == null) {
+            _clairsBG = GameObject.Find("Background").GetComponent<Image>(); //can assign a gameobject to a variable
+        }
+        
         HasVisited = false;
         animDone = false;
     }
@@ -30,8 +36,8 @@ public class GirlAnimations : MonoBehaviour
         {
             anim.SetTrigger("NowPoint");
             anim.SetTrigger("NowIdle");
-            clairsSpeech.text = "You've won a prize! Pick from anything on the table.";
-            clairsBG.GetComponent<Image>().enabled = true;
+            _clairsSpeech.text = "You've won a prize! Pick from anything on the table.";
+            _clairsBG.enabled = true;
             StartCoroutine("WaitABit", 5);
             animDone = true;
         }
@@ -39,8 +45,8 @@ public class GirlAnimations : MonoBehaviour
         {
             anim.SetTrigger("NowTalk");
             anim.SetTrigger("NowIdle");
-            GameObject.Find("ClaireSpeech").GetComponent<Text>().text = "Welcome! Grab some coconuts and throw them at the target.";
-            GameObject.Find("Background").GetComponent<Image>().enabled = true;
+            _clairsSpeech.text = "Welcome! Grab some coconuts and throw them at the target.";
+            _clairsBG.enabled = true;
             StartCoroutine("WaitABit", 5);
             HasVisited = true;
         }
@@ -49,7 +55,7 @@ public class GirlAnimations : MonoBehaviour
     private IEnumerator WaitABit(int waitTime) //this will turn off the notice 
     {
         yield return new WaitForSeconds(waitTime);
-        clairsSpeech.text = "";        
-        clairsBG.GetComponent<Image>().enabled = false;
+        _clairsSpeech.text = "";        
+        _clairsBG.enabled = false;
     }
 }

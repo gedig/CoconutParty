@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1021534620}
   - component: {fileID: 1021534622}
   - component: {fileID: 1021534621}
-  - component: {fileID: 1021534623}
+  - component: {fileID: 1021534624}
   m_Layer: 5
   m_Name: Hello
   m_TagString: Untagged
@@ -453,7 +453,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021534619}
   m_CullTransparentMesh: 0
---- !u!114 &1021534623
+--- !u!114 &1021534624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021534619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f1ccf529460604cad2a249b0d3b117, type: 3}
+  m_Script: {fileID: 11500000, guid: b1e91636111ab554c81bf0f5b8c4db9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1667939611
@@ -628,5 +628,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
