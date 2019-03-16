@@ -6,15 +6,16 @@ public class FindCoconuts : MonoBehaviour
 {
     //used to detect an object before a collision
 
+    public delegate void CoconutAction();
+    public static event CoconutAction CoconutAcquired;
+
     RaycastHit hit;
     public float distance;
-    public static bool foundCoconuts;
     public static bool hasKey;
     private bool collectedPrize;
 
     private void Start()
     {
-        foundCoconuts = false;
         collectedPrize = false;
         hasKey = false;
     }
@@ -23,13 +24,14 @@ public class FindCoconuts : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
+        {
+            if (Physics.Raycast(transform.position - (transform.forward * -0.3f), transform.forward, out hit, distance))
             {
                 if (hit.collider.gameObject.name == "Coconut")
                 {
-                    Destroy(hit.collider.gameObject);
-                    foundCoconuts = true;
+                    hit.collider.gameObject.SetActive(false);
+                    // Send message that a coconut was collected
+                    CoconutAcquired();
                 }
             }
             if (collectedPrize == false && CoconutWin.haveWon)
