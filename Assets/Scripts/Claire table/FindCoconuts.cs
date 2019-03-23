@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class FindCoconuts : MonoBehaviour
 {
-    //used to detect an object before a collision
-
     public delegate void CoconutAction();
     public static event CoconutAction CoconutAcquired;
+
+    //used to detect an object before a collision
 
     RaycastHit hit;
     public float distance;
     public static bool hasKey;
     private bool collectedPrize;
+    private int layerMask;
 
     private void Start()
     {
         collectedPrize = false;
         hasKey = false;
+        layerMask = 1 << 9;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class FindCoconuts : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(transform.position - (transform.forward * -0.3f), transform.forward, out hit, distance))
+            if (Physics.Raycast(transform.position - (transform.forward * -0.3f), transform.forward, out hit, distance, layerMask))
             {
                 if (hit.collider.gameObject.name == "Coconut")
                 {
@@ -36,7 +38,7 @@ public class FindCoconuts : MonoBehaviour
             }
             if (collectedPrize == false && CoconutWin.haveWon)
             {
-                if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, distance, layerMask))
                 {
                     if (hit.collider.gameObject.name == "jeep" || hit.collider.gameObject.name == "Triceratops") 
                     {
