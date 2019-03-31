@@ -1851,8 +1851,8 @@ GameObject:
   - component: {fileID: 1334026266}
   - component: {fileID: 1334026265}
   - component: {fileID: 1334026267}
-  - component: {fileID: 1334026268}
   - component: {fileID: 885827711}
+  - component: {fileID: 3739379617360913178}
   m_Layer: 0
   m_Name: Claire
   m_TagString: Untagged
@@ -1911,18 +1911,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7512884, y: 2.3347626, z: 0.6254082}
   m_Center: {x: -0.01965475, y: 0.6673813, z: 0.069395065}
---- !u!114 &1334026268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334026264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74d76c6b8b99374d9a0c6a088093fce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &885827711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,6 +1924,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &3739379617360913178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334026264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1475f00c9f0eb4a4a90254b225443e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clairsSpeech: {fileID: 0}
+  _clairsBG: {fileID: 0}
 --- !u!1 &1347599263
 GameObject:
   m_ObjectHideFlags: 0
