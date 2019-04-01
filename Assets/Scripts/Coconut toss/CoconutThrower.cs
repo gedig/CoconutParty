@@ -33,11 +33,9 @@ public class CoconutThrower : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _onmat && _coconutCount > 0)
+        if (Input.GetMouseButtonDown(0) && !InteractionWithFood.AtFood && !PermitTalking.AtTable && _coconutCount > 0 && !PauseMenu._paused)
         {
-          //  Vector3 projSpawnOffset = (transform.right * 0.3f ) + (transform.up * 0.1f) + (transform.forward * -0.1f);
             GameObject proj = Instantiate<GameObject>(coconutPrefab, transform.position, Quaternion.identity);
-
             proj.name = "coconutThrow";
             proj.GetComponent<Rigidbody>().AddForce(transform.forward * ProjectileForce);
             Physics.IgnoreCollision(transform.root.GetComponent<Collider>(), proj.GetComponent<Collider>(), true);

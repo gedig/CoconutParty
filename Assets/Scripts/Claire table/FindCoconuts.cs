@@ -11,14 +11,10 @@ public class FindCoconuts : MonoBehaviour
 
     RaycastHit hit;
     public float distance;
-    public static bool hasKey;
-    private bool collectedPrize;
     private int layerMask;
 
     private void Start()
     {
-        collectedPrize = false;
-        hasKey = false;
         layerMask = 1 << 9;
     }
 
@@ -34,23 +30,6 @@ public class FindCoconuts : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                     // Send message that a coconut was collected
                     CoconutAcquired();
-                }
-            }
-            if (collectedPrize == false && CoconutWin.haveWon)
-            {
-                if (Physics.Raycast(transform.position, transform.forward, out hit, distance, layerMask))
-                {
-                    if (hit.collider.gameObject.name == "jeep" || hit.collider.gameObject.name == "Triceratops") 
-                    {
-                        Destroy(hit.collider.gameObject);
-                        collectedPrize = true;
-                    }
-                    else if (hit.collider.gameObject.name == "Key")
-                    {
-                        Destroy(hit.collider.gameObject);
-                        collectedPrize = true;
-                        hasKey = true;
-                    }
                 }
             }
         }

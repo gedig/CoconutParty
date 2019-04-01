@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameUI;
     [SerializeField] private MonoBehaviour[] _additionalDisables;
-    private bool _paused = false;
+    public static bool _paused = false;
 
     private float _prevTimeScale = 1.0f;
 
@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
             // The FPS Controller does mouse lock logic, if we disable it then we have to clean up a bit.
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
         } else {
             // Unpause-specific logic
             Time.timeScale = _prevTimeScale;
