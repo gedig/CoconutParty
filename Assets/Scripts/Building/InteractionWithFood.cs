@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PermitTalking : MonoBehaviour
+public class InteractionWithFood : MonoBehaviour
 {
     public Transform crosshairs;
-    public static bool AtTable;
+    public static bool AtFood = false;
 
     private void OnTriggerEnter()
     {
-        GirlAnimations.IsInFront = true;
         crosshairs.GetComponent<Image>().enabled = true;
-        AtTable = true;
+        AtFood = true;
     }
 
     private void OnTriggerExit()
     {
-        GirlAnimations.IsInFront = false;
         crosshairs.GetComponent<Image>().enabled = false;
-        AtTable = false;
+        AtFood = false;
     }
 }

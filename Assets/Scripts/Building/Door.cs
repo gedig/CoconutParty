@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InFrontOfDoor && FindCoconuts.hasKey && HasPlayedAudio == false)
+        if (InFrontOfDoor && FindPrizes.hasKey && HasPlayedAudio == false)
         {
             openDoor.Play("DoorOpen");
             GetComponent<AudioSource>().PlayOneShot(creakingdoor);
