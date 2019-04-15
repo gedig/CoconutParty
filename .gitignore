@@ -32,6 +32,9 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 
+# Mac nonsense
+*DS_STORE*
+
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
