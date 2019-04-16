@@ -14,11 +14,14 @@ public class RandomizeColourRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Physics.Raycast(transform.position, transform.forward, out hit, 100f);
-            RandomizeColourLive colourScript = hit.collider.gameObject.GetComponent<RandomizeColourLive>();
-            if (colourScript != null)
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 100f))
             {
-                colourScript.RandomizeColour();
+                RandomizeColourLive colourScript = hit.collider.gameObject.GetComponent<RandomizeColourLive>();
+                if (colourScript != null)
+                {
+                    Debug.Log("Changing Colour from Raycast Hit.");
+                    colourScript.RandomizeColour();
+                }
             }
         }
     }

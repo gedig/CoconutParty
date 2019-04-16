@@ -30,6 +30,7 @@ public class RandomizeColourLive : MonoBehaviour
      */
     void OnMouseDown()
     {
+        Debug.Log("Changing colour from OnMouseDown.");
         RandomizeColour();
     }
 
