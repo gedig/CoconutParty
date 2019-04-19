@@ -6,16 +6,21 @@ using UnityEngine.UI;
 public class Mat : MonoBehaviour
 {
     public Transform crosshairs;
+    public bool toggleCrosshair = false;
 
     private void OnTriggerEnter()
     {
         GameObject.Find("Launcher").SendMessage("OnMat", true);
-        crosshairs.GetComponent<Image>().enabled = true;
+        if (toggleCrosshair) {
+            crosshairs.GetComponent<Image>().enabled = true;
+        }
     }
 
     private void OnTriggerExit()
     {
         GameObject.Find("Launcher").SendMessage("OnMat", false);
-        crosshairs.GetComponent<Image>().enabled = false;
+        if (toggleCrosshair) {
+            crosshairs.GetComponent<Image>().enabled = false;
+        }
     }
 }

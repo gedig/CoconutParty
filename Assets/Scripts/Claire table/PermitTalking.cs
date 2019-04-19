@@ -7,18 +7,23 @@ public class PermitTalking : MonoBehaviour
 {
     public Transform crosshairs;
     public static bool AtTable;
+    public bool toggleCrosshairs = false;
 
     private void OnTriggerEnter()
     {
         GirlAnimations.IsInFront = true;
-        crosshairs.GetComponent<Image>().enabled = true;
+        if (toggleCrosshairs) {
+            crosshairs.GetComponent<Image>().enabled = true;
+        }
         AtTable = true;
     }
 
     private void OnTriggerExit()
     {
         GirlAnimations.IsInFront = false;
-        crosshairs.GetComponent<Image>().enabled = false;
+        if (toggleCrosshairs) {
+            crosshairs.GetComponent<Image>().enabled = false;
+        }
         AtTable = false;
     }
 }
