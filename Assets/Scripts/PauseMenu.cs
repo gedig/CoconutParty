@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    private const float TOGGLE_COOLDOWN_TIME = 0.1f;
-
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameUI;
     [SerializeField] private MonoBehaviour[] _additionalDisables;
@@ -14,17 +12,10 @@ public class PauseMenu : MonoBehaviour
 
     private float _prevTimeScale = 1.0f;
 
-    private float _timeUntilToggleUnlock = 0.0f;
-
     void Update()
     {
-        if (_timeUntilToggleUnlock <= 0.0f) {
-            if (Input.GetKeyUp(KeyCode.Escape)) {
-                TogglePause();
-                _timeUntilToggleUnlock = TOGGLE_COOLDOWN_TIME;
-            }
-        } else {
-            _timeUntilToggleUnlock -= Time.unscaledDeltaTime;
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            TogglePause();
         }
     }
 

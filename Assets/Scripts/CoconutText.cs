@@ -11,7 +11,17 @@ public class CoconutText : MonoBehaviour
     void Start()
     {
         _text = GetComponent<Text>();
+        
+    }
+
+    private void OnEnable()
+    {
         CoconutThrower.CoconutUpdate += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        CoconutThrower.CoconutUpdate -= UpdateUI;
     }
 
     void UpdateUI(int coconuts)
